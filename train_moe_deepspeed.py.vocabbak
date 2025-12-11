@@ -135,7 +135,7 @@ def main():
                 if step >= args.max_steps:
                     break
     except KeyboardInterrupt:
-        print("KeyboardInterrupt — saving checkpoint and exiting.")
+        print("KeyboardInterrupt — saving checkpoint and exiting")
         engine.save_checkpoint(args.output_dir)
         sys.exit(0)
 
