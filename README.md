@@ -52,7 +52,7 @@ The efficiency gains of the MoE architecture translate directly into superior pe
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/YourUsername/124M-MoE.git
+    git clone https://github.com/Kahabk/Moe-llm/124M-MoE.git
     cd 124M-MoE
     ```
 2.  Install dependencies:
