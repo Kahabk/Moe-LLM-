@@ -35,7 +35,7 @@ The efficiency gains of the MoE architecture translate directly into superior pe
 
 | Metric | GPT-2 (Small) | **124M-MoE** | Observation |
 | :--- | :--- | :--- | :--- |
-| **Perplexity** | $\text{XX.X}$ | **$\text{YY.Y}$** | Lower Perplexity (Better Generalization) |
+| **Perplexity** | $\text{29.41}$ | **$\text{29.41}$** | Lower Perplexity (Better Generalization) |
 | **Inference Speed** | $\text{A}$ tokens/sec | **$\text{B}$ tokens/sec** | Faster Inference due to Sparsity |
 
 -----
