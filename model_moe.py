@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from einops import rearrange
 
+device = "cuda" if torch.cuda.is_avlable() else "cpu"
 
 class SwiGLU(nn.Module):
     def __init__(self, dim, ff_dim):
