@@ -105,15 +105,19 @@ class CausalSelfAttention(nn.Module):
         v = rearrange(v, "b t (h d) -> b h t d", h=self.n_heads)
        
         att = torch.einsum("b h i d, b h j d -> b h i j", q, k) / (self.head_dim ** 0.5)
-        # causal mask
+        
         i, j = att.shape[-2], att.shape[-1]
         if self.mask is None or self.mask.size(0) < i:
             mask = torch.tril(torch.ones((i, j), device=x.device)).unsqueeze(0).unsqueeze(0)
             self.mask = mask
+            
         att = att.masked_fill(self.mask[:, :, :i, :j] == 0, float("-inf"))
         att = F.softmax(att, dim=-1)
+        
         out = torch.einsum("b h i j, b h j d -> b h i d", att, v)
+        
         out = rearrange(out, "b h t d -> b t (h d)")
+        
         return self.out(out)
 
 class TransformerBlock(nn.Module):
